@@ -1,18 +1,22 @@
 
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+
 import { Suspense } from 'react';
 import { Button } from '../lib/mui';
-import Loading from './loading';
+import getAllUsers from '@/lib/getAllUsers';
+import Link from 'next/link';
 
 export default async function Page() {
-
-  const data = await fetch('http://localhost:3000/api/user', 
-    { method: 'GET',  next: { revalidate: 1 }  }).then(x => x.json())
-
+  const data = await (await fetch('http://127.0.0.1:3000/api/blog')).json()
+  const { files } = data
+  
   return (<h1>
     <Suspense fallback={<p> Loading... </p>}>
-      <Button variant="contained">Hello World</Button>
+      <Button variant="contained">A</Button>
+      {files.map((x: string) => (
+        <Button key={x} variant="text">
+          <Link href={`/blog/${x.split('.')[0]}`}>{x}</Link>
+        </Button>
+      ))}
     </Suspense>
   </h1>);
 

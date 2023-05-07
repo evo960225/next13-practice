@@ -1,11 +1,22 @@
+
+
+import { Suspense } from 'react';
+import { Button } from '@/lib/mui';
 import Link from 'next/link';
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
-
-export default function Page() {
+export default async function Page() {
+  const data = await (await fetch('http://127.0.0.1:3000/api/blog')).json()
+  const { files } = data
+  
   return (<h1>
-    <Link href='blog/2000'>2000</Link>
+    <Suspense fallback={<p> Loading... </p>}>
+      <Button variant="contained">A</Button>
+      {files.map((x: string) => (
+        <Button key={x} variant="text">
+          <Link href={`/blog/${x.split('.')[0]}`}>{x}</Link>
+        </Button>
+      ))}
+    </Suspense>
   </h1>);
+
 }
