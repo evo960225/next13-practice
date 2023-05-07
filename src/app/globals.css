@@ -16,6 +16,14 @@
   }
 }
 
+.font-default {
+  font-family: 'CascadiaCode', 'Noto Sans JP', 'Noto Sans TC', sans-serif;
+}
+
+.font-cascadia-code {
+  font-family: 'CascadiaCode', sans-serif;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -27,7 +35,19 @@ body {
   font-family: 'CascadiaCode', 'Noto Sans JP', 'Noto Sans TC', sans-serif;
 }
 
+* {
+  padding: 0;
+  margin: 0;
+}
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button.MuiButtonBase-root {
+  text-transform: none;
+}
 
 @font-face {
   font-family: 'CascadiaCode';
