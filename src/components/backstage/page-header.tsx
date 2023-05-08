@@ -5,7 +5,7 @@ import { Button } from '@/lib/mui';
 export default function pageHeader(props: component) {
   return (<>
     <div className={`flex px-6 py-1 w-full bg-slate-500 ${props.class}`}>
-      <h1 className="flex items-center text-xl tracking-widest">
+      <h1 className="flex text-white items-center text-xl tracking-widest">
         <Link href="/backstage">{`Hoshiko他家`}</Link>
       </h1>
       <div className="flex m-auto mr-0">

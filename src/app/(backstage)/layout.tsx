@@ -2,7 +2,7 @@ import '@/app/globals.css'
 import PageHeader from '@/components/backstage/page-header'
 import PageFooter from '@/components/backstage/page-footer'
 import PageContent from '@/components/backstage/page-content'
-import { CssBaseline } from '@/lib/mui';
+import { ScopedCssBaseline } from '@/lib/mui';
 
 export const metadata = {
   title: 'hoshiko後院',
@@ -20,12 +20,13 @@ export default function RootLayout({
     <html lang="zh-tw">
       <body className="h-full bg-transparent">
         <>
-          <CssBaseline />
-          <PageHeader class="h-12" />
-          <PageContent class="h-[calc(100vh-48px-48px)]">
-            {children}
-          </PageContent>
-          <PageFooter class="h-12"/>
+          <ScopedCssBaseline>
+            <PageHeader class="h-12" />
+            <PageContent class="h-[calc(100vh-48px-48px)]">
+              {children}
+            </PageContent>
+            <PageFooter class="h-12"/>
+          </ScopedCssBaseline>
         </>
       </body>
     </html>
