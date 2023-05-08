@@ -7,18 +7,19 @@ import Link from 'next/link';
 
 
 const CellButton = ({params}: {params: GridRenderCellParams}) => {
-  console.log(params);
-  
+
   return (
-    <Button variant="contained" size="small">
-      <Link href={`/backstage/blog/edit/${params?.row.title.split('.')[0]}`}>編輯</Link>
-    </Button>
+    <Link href={`/backstage/blog/edit/${params?.row.title.split('.')[0]}`}>
+      <Button variant="contained" size="small">
+        編輯
+      </Button>
+    </Link>
   );
 };
 
 const columns: GridColDef[] = [
   { field: 'date', headerName: 'Date', sortable: true, width: 130 },
-  { field: 'title', headerName: 'Title', width: 130 },
+  { field: 'title', headerName: 'Title', width: 240 },
   { field: 'botton', headerName: 'Botton', width: 130,
     renderCell: (params) => (
       <>

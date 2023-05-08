@@ -14,9 +14,11 @@ export default async function Page() {
     <Suspense fallback={<p> Loading... </p>}>
       <Button variant="contained">A</Button>
       {files.map((x: string) => (
-        <Button key={x} variant="text">
-          <Link href={`/blog/${x.split('.')[0]}`}>{x}</Link>
-        </Button>
+        <Link href={`/blog/${x.split('.')[0]}`}>
+          <Button variant="text">
+          {x}
+          </Button>
+        </Link>
       ))}
     </Suspense>
   </h1>);
