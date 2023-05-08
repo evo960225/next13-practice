@@ -14,7 +14,7 @@ export default async function Page() {
     <Suspense fallback={<p> Loading... </p>}>
       <Button variant="contained">A</Button>
       {files.map((x: string) => (
-        <Link href={`/blog/${x.split('.')[0]}`}>
+        <Link href={`/blog/${x.split('.')[0]}`} key={x}>
           <Button variant="text">
           {x}
           </Button>

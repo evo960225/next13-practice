@@ -6,9 +6,9 @@ export default async function Page({ params }: { params: { slug: Array<string> }
   const { title, contentHtml } = data
 
   return (
-    <>
+    <div>
       <h1>{title}</h1>
       <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
-    </>
+    </div>
   );
 }
