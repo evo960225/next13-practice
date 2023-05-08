@@ -1,8 +1,8 @@
-import './globals.css'
-import PageHeader from './component/page-header'
-import PageFooter from './component/page-footer'
-import PageContent from './component/page-content'
-import { CssBaseline } from '../lib/mui';
+import '@/app/globals.css'
+import PageHeader from '@/components/page-header'
+import PageFooter from '@/components/page-footer'
+import PageContent from '@/components/page-content'
+import { CssBaseline } from '@/lib/mui';
 
 export const metadata = {
   title: 'hoshiko他家',
