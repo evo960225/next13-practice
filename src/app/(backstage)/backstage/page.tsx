@@ -6,7 +6,8 @@ import { Button } from '@/lib/mui';
 import Link from 'next/link';
 
 export default async function Page() {
-  const data = await (await fetch('http://127.0.0.1:3000/api/blog')).json()
+  
+  const data = await (await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog`)).json()
   const { files } = data
   
   return (<h1>
