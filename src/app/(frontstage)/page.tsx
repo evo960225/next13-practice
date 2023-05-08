@@ -1,8 +1,6 @@
 
-
 import { Suspense } from 'react';
 import { Button } from '@/lib/mui';
-import getAllUsers from '@/lib/getAllUsers';
 import Link from 'next/link';
 
 export default async function Page() {
